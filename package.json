@@ -4,7 +4,11 @@
   "license": "MIT",
   "homepage": "https://deepakm025.github.io/MusicBar",
   "scripts": {
-    "deploy": "gh-pages -d music-library/dist"
+    "nx": "nx",
+    "start": "nx serve",
+    "build": "nx build --buildLibsFromSource",
+    "predeploy": "npm run build -- --prod --baseHref=/music-bar/",
+    "deploy": "gh-pages -d dist/apps/music-bar"
   },
   "private": true,
   "devDependencies": {

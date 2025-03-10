@@ -55,9 +55,10 @@
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": ["{workspaceRoot}/dist/apps/[app-name]"],
+      "outputs": ["{workspaceRoot}/dist/apps/music-library"],
       "options": {
-        "outputPath": "dist/apps/[app-name]"
+        "outputPath": "dist/apps/music-library",
+        "sourceRoot": "music-library/src"
       }
     }
   }
