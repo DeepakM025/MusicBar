@@ -5,6 +5,11 @@ import Signup from "./Signup";
 import '@testing-library/jest-dom/extend-expect';
 import toast from "react-hot-toast";
 
+jest.mock("react-hot-toast", () => ({
+    success: jest.fn(),
+    error: jest.fn(),
+}));
+
 describe("Signup Component", () => {
     beforeEach(() => {
         window.alert = jest.fn();
@@ -28,8 +33,7 @@ describe("Signup Component", () => {
         fireEvent.change(screen.getByPlaceholderText("Password"), { target: { value: "password123" } });
         fireEvent.change(screen.getByPlaceholderText("Confirm Password"), { target: { value: "password321" } });
         fireEvent.click(screen.getByRole("button", { name: /signup/i }));
-
-        expect(screen.getByText("Passwords do not match!")).toBeInTheDocument();
+        expect(toast.error).toHaveBeenCalledWith("Passwords do not match!");
     });
 
     test("successful signup and redirect", () => {
