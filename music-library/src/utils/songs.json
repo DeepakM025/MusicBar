@@ -1,0 +1,249 @@
+{
+  "musics": [
+    {
+      "title": "Bohemian Rhapsody",
+      "artist": "Queen",
+      "album": "A Night at the Opera",
+      "year": 1975,
+      "genre": "Rock"
+    },
+    {
+      "title": "Imagine",
+      "artist": "John Lennon",
+      "album": "Imagine",
+      "year": 1971,
+      "genre": "Pop"
+    },
+    {
+      "title": "Hotel California",
+      "artist": "Eagles",
+      "album": "Hotel California",
+      "year": 1976,
+      "genre": "Rock"
+    },
+    {
+      "title": "Billie Jean",
+      "artist": "Michael Jackson",
+      "album": "Thriller",
+      "year": 1982,
+      "genre": "Pop"
+    },
+    {
+      "title": "Smells Like Teen Spirit",
+      "artist": "Nirvana",
+      "album": "Nevermind",
+      "year": 1991,
+      "genre": "Grunge"
+    },
+    {
+      "title": "Like a Rolling Stone",
+      "artist": "Bob Dylan",
+      "album": "Highway 61 Revisited",
+      "year": 1965,
+      "genre": "Folk Rock"
+    },
+    {
+      "title": "What's Going On",
+      "artist": "Marvin Gaye",
+      "album": "What's Going On",
+      "year": 1971,
+      "genre": "Soul"
+    },
+    {
+      "title": "Stairway to Heaven",
+      "artist": "Led Zeppelin",
+      "album": "Led Zeppelin IV",
+      "year": 1971,
+      "genre": "Rock"
+    },
+    {
+      "title": "Hey Jude",
+      "artist": "The Beatles",
+      "album": "Hey Jude",
+      "year": 1968,
+      "genre": "Rock"
+    },
+    {
+      "title": "Good Vibrations",
+      "artist": "The Beach Boys",
+      "album": "Smiley Smile",
+      "year": 1966,
+      "genre": "Pop"
+    },
+    {
+      "title": "Purple Haze",
+      "artist": "Jimi Hendrix",
+      "album": "Are You Experienced",
+      "year": 1967,
+      "genre": "Rock"
+    },
+    {
+      "title": "Yesterday",
+      "artist": "The Beatles",
+      "album": "Help!",
+      "year": 1965,
+      "genre": "Pop"
+    },
+    {
+      "title": "Johnny B. Goode",
+      "artist": "Chuck Berry",
+      "album": "Chuck Berry Is on Top",
+      "year": 1958,
+      "genre": "Rock and Roll"
+    },
+    {
+      "title": "Superstition",
+      "artist": "Stevie Wonder",
+      "album": "Talking Book",
+      "year": 1972,
+      "genre": "Funk"
+    },
+    {
+      "title": "I Can't Get No Satisfaction",
+      "artist": "The Rolling Stones",
+      "album": "Out of Our Heads",
+      "year": 1965,
+      "genre": "Rock"
+    },
+    {
+      "title": "Respect",
+      "artist": "Aretha Franklin",
+      "album": "I Never Loved a Man the Way I Love You",
+      "year": 1967,
+      "genre": "Soul"
+    },
+    {
+      "title": "Born to Run",
+      "artist": "Bruce Springsteen",
+      "album": "Born to Run",
+      "year": 1975,
+      "genre": "Rock"
+    },
+    {
+      "title": "My Generation",
+      "artist": "The Who",
+      "album": "My Generation",
+      "year": 1965,
+      "genre": "Rock"
+    },
+    {
+      "title": "A Change Is Gonna Come",
+      "artist": "Sam Cooke",
+      "album": "Ain't That Good News",
+      "year": 1964,
+      "genre": "Soul"
+    },
+    {
+      "title": "Blowin' in the Wind",
+      "artist": "Bob Dylan",
+      "album": "The Freewheelin' Bob Dylan",
+      "year": 1963,
+      "genre": "Folk"
+    },
+    {
+      "title": "London Calling",
+      "artist": "The Clash",
+      "album": "London Calling",
+      "year": 1979,
+      "genre": "Punk Rock"
+    },
+    {
+      "title": "I Want to Hold Your Hand",
+      "artist": "The Beatles",
+      "album": "Meet the Beatles!",
+      "year": 1963,
+      "genre": "Rock"
+    },
+    {
+      "title": "Bridge Over Troubled Water",
+      "artist": "Simon & Garfunkel",
+      "album": "Bridge Over Troubled Water",
+      "year": 1970,
+      "genre": "Folk Rock"
+    },
+    {
+      "title": "Let It Be",
+      "artist": "The Beatles",
+      "album": "Let It Be",
+      "year": 1970,
+      "genre": "Rock"
+    },
+    {
+      "title": "Layla",
+      "artist": "Derek and the Dominos",
+      "album": "Layla and Other Assorted Love Songs",
+      "year": 1970,
+      "genre": "Rock"
+    },
+    {
+      "title": "What's Love Got to Do with It",
+      "artist": "Tina Turner",
+      "album": "Private Dancer",
+      "year": 1984,
+      "genre": "Pop"
+    },
+    {
+      "title": "Sweet Child O' Mine",
+      "artist": "Guns N' Roses",
+      "album": "Appetite for Destruction",
+      "year": 1987,
+      "genre": "Rock"
+    },
+    {
+      "title": "Dancing Queen",
+      "artist": "ABBA",
+      "album": "Arrival",
+      "year": 1976,
+      "genre": "Disco"
+    },
+    {
+      "title": "No Woman, No Cry",
+      "artist": "Bob Marley and the Wailers",
+      "album": "Live!",
+      "year": 1975,
+      "genre": "Reggae"
+    },
+    {
+      "title": "Light My Fire",
+      "artist": "The Doors",
+      "album": "The Doors",
+      "year": 1967,
+      "genre": "Rock"
+    },
+    {
+      "title": "Roxanne",
+      "artist": "The Police",
+      "album": "Outlandos d'Amour",
+      "year": 1978,
+      "genre": "Rock"
+    },
+    {
+      "title": "Every Breath You Take",
+      "artist": "The Police",
+      "album": "Synchronicity",
+      "year": 1983,
+      "genre": "Rock"
+    },
+    {
+      "title": "Wonderwall",
+      "artist": "Oasis",
+      "album": "(What's the Story) Morning Glory?",
+      "year": 1995,
+      "genre": "Britpop"
+    },
+    {
+      "title": "Losing My Religion",
+      "artist": "R.E.M.",
+      "album": "Out of Time",
+      "year": 1991,
+      "genre": "Alternative Rock"
+    },
+    {
+      "title": "Under Pressure",
+      "artist": "Queen & David Bowie",
+      "album": "Hot Space",
+      "year": 1981,
+      "genre": "Rock"
+    }
+  ]
+}

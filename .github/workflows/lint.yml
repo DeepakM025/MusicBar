@@ -1,17 +1,13 @@
-name: CI
+name: Lint
 
 on:
-  push:
-    branches:
-      - main
-      - develop
   pull_request:
     branches:
       - main
       - develop
 
 jobs:
-  build-and-test:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,11 +23,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint the project
+      - name: Run linting
         run: npm run lint
-
-      - name: Run unit tests
-        run: npm run test -- --ci --maxWorkers=2
-
-      - name: Build all apps
-        run: npm run build

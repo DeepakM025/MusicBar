@@ -1,0 +1,23 @@
+.songItem {
+    font-size: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .songItem:last-child {
+    border-bottom: none;
+  }
+  
+  .title {
+    font-weight: bold;
+  }
+  
+  .artist {
+    color: #007bff;
+  }
+  
+  .album {
+    font-style: italic;
+    color: #555;
+  }
+  

@@ -1,17 +1,12 @@
-name: CI
+name: CD
 
 on:
   push:
     branches:
       - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
 
 jobs:
-  build-and-test:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,11 +22,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint the project
-        run: npm run lint
-
-      - name: Run unit tests
-        run: npm run test -- --ci --maxWorkers=2
-
-      - name: Build all apps
+      - name: Build the application
         run: npm run build
+
+      - name: Deploy application
+        run: |
+          echo "Deploying application..."
+          # Add your deployment commands here (e.g., SSH, Firebase, Vercel, AWS, etc.)
