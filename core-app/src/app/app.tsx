@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 
 const MusicLibrary = React.lazy(() => import('../../../music-library/src/components/MusicLibrary/MusicLibrary'));
 
-export function App() {
+export default function App() {
   return (
     <div>
       <h1>Core App</h1>

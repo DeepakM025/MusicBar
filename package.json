@@ -2,7 +2,9 @@
   "name": "@music-bar/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "deploy": "gh-pages -d music-library/dist"
+  },
   "private": true,
   "devDependencies": {
     "@nx/jest": "20.5.0",
@@ -27,6 +29,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/ui": "^3.0.0",
     "babel-jest": "^29.7.0",
+    "gh-pages": "^6.3.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jiti": "2.4.2",
