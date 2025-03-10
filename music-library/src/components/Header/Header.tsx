@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import styles from "./Header.module.css"; // Import CSS file
+import userAvatar from '../../assets/user-avatar.png';
 
 const Header = ({ username }: { username: string }) => {
     const { logout, isLoggedIn } = useAuth();
@@ -10,7 +11,7 @@ const Header = ({ username }: { username: string }) => {
     const HeaderButton = () => {
         return isLoggedIn ? (
             <>
-                <span className={styles.username}>{username}</span>
+                <span className={styles.username}><img src={userAvatar} alt={userAvatar} className={styles.useravatar} /> {username}</span>
                 <button
                     onClick={logout}
                     className={styles.logoutButton}

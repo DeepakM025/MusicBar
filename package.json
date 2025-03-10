@@ -2,6 +2,7 @@
   "name": "@music-bar/source",
   "version": "0.0.0",
   "license": "MIT",
+  "homepage": "https://deepakm025.github.io/MusicBar",
   "scripts": {
     "deploy": "gh-pages -d music-library/dist"
   },

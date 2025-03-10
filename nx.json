@@ -51,5 +51,14 @@
         "linter": "none"
       }
     }
+  },
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{workspaceRoot}/dist/apps/[app-name]"],
+      "options": {
+        "outputPath": "dist/apps/[app-name]"
+      }
+    }
   }
 }

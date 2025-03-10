@@ -1,7 +1,7 @@
 /* === Global Styles === */
 body {
     font-family: "Space Grotesk", sans-serif;
-    background-color: #f4f4f4;
+    background-color: #000;
     margin: 0;
     padding: 0;
     letter-spacing: .4px;
@@ -22,11 +22,14 @@ body {
 
 /* === Form Styling === */
 .form {
-    background-color: white;
+    background-color: #000;
     padding: 24px;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 400px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #ccc;
 }
 
 /* === Headings === */
@@ -46,12 +49,18 @@ body {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
+    width: calc(100% - 20px);
+    background-color: transparent;
+    color: #fff;
+}
+.select{
+    width: 100% !important;
 }
 
 /* === Button Styling === */
 .button {
     width: 100%;
-    background-color: #007bff;
+    background-color: #1DB954;
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -62,7 +71,8 @@ body {
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #fff;
+    color: #1DB954;
 }
 
 /* === Header Styling === */
@@ -71,7 +81,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background-color: #007bff;
+    background-color: #1DB954;
     color: white;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }

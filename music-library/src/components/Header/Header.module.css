@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background-color: #2563eb; /* Blue-600 */
+    background-color: #1DB954;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -28,10 +28,18 @@
 .username {
     font-size: 18px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+.useravatar{
+    max-height: 35px;
+    max-width: 35px;
+    margin-right: .5rem;
 }
 
 .logoutButton {
-    background-color: #dc2626; /* Red-500 */
+    background-color: #000; /* Red-500 */
     padding: 8px 16px;
     border: none;
     border-radius: 6px;
@@ -39,8 +47,11 @@
     transition: background-color 0.3s ease;
     color: white;
     font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
 .logoutButton:hover {
-    background-color: #b91c1c; /* Darker red */
+    background-color: #fff; /* Darker red */
+    color: #1DB954;
 }

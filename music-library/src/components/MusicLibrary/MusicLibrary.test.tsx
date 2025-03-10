@@ -3,6 +3,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import MusicLibrary from "./MusicLibrary";
 import songs from "../../utils/songs.json";
 import '@testing-library/jest-dom/extend-expect';
+import { AuthProvider } from "../../context/AuthContext";
 
 // Mock IntersectionObserver
 global.IntersectionObserver = class IntersectionObserver {
@@ -22,9 +23,12 @@ global.IntersectionObserver = class IntersectionObserver {
 };
 
 describe("MusicLibrary Component", () => {
-    beforeEach(() => {
+        render(
+            <AuthProvider>
+                <MusicLibrary />
+            </AuthProvider>
+        );
         render(<MusicLibrary />);
-    });
 
     test("renders MusicLibrary with title", () => {
         expect(screen.getByText("🎵 Welcome to the Music Library!")).toBeInTheDocument();

@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import songs from "../../utils/songs.json";
 import Song from "../Song/Song";
 import styles from "./MusicLibrary.module.css";
+import AddSong from "../AddSong/AddSong";
+import { useAuth } from "../../context/AuthContext";
+import toast from "react-hot-toast";
 
 interface SongData {
   title: string;
@@ -11,6 +14,7 @@ interface SongData {
 
 const BATCH_SIZE = 10; // Load 10 songs at a time
 const MAX_SONGS = 60; // Set max limit to 60
+const ADMIN = 'admin';
 
 const MusicLibrary: React.FC = () => {
   const [filter, setFilter] = useState<string>("");
@@ -19,11 +23,18 @@ const MusicLibrary: React.FC = () => {
   const [visibleSongs, setVisibleSongs] = useState<SongData[]>([]);
   const [loadedCount, setLoadedCount] = useState(BATCH_SIZE);
   const [isLoading, setIsLoading] = useState(false);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const [songList, setSongList] = useState<SongData[]>(songs.musics);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastSongRef = useRef<HTMLDivElement | null>(null);
+  const [maxSongs, setMaxSongs] = useState(MAX_SONGS);
+  const { role } = useAuth();
+
+  const successNotify = (msg: string) => toast.success(msg);
+  const errorNotify = (msg: string) => toast.error(msg);
 
   // Filtering
-  const filteredSongs = songs.musics?.filter((song: SongData) =>
+  const filteredSongs = songList?.filter((song: SongData) =>
     [song.title, song.artist, song.album].some((field) =>
       field.toLowerCase().includes(filter.toLowerCase())
     )
@@ -38,20 +49,20 @@ const MusicLibrary: React.FC = () => {
   // Grouping
   const groupedSongs = groupKey
     ? sortedSongs.reduce((acc, song) => {
-        const key = song[groupKey];
-        if (!acc[key]) acc[key] = [];
-        acc[key].push(song);
-        return acc;
-      }, {} as Record<string, SongData[]>)
+      const key = song[groupKey];
+      if (!acc[key]) acc[key] = [];
+      acc[key].push(song);
+      return acc;
+    }, {} as Record<string, SongData[]>)
     : { "All Songs": sortedSongs };
 
   // Load more songs when scrolling (Limit to MAX_SONGS)
   const loadMoreSongs = () => {
-    if (loadedCount >= MAX_SONGS) return; // Stop loading if max limit is reached
+    if (loadedCount >= maxSongs) return; // Stop loading if max limit is reached
 
     setIsLoading(true);
     setTimeout(() => {
-      const newLoadedCount = Math.min(loadedCount + BATCH_SIZE, MAX_SONGS); // Ensure we don’t exceed the limit
+      const newLoadedCount = Math.min(loadedCount + BATCH_SIZE, maxSongs); // Ensure we don’t exceed the limit
       setVisibleSongs(sortedSongs.slice(0, newLoadedCount));
       setLoadedCount(newLoadedCount);
       setIsLoading(false);
@@ -61,7 +72,7 @@ const MusicLibrary: React.FC = () => {
   // Infinite scroll observer
   const observerCallback = useCallback(
     (entries: IntersectionObserverEntry[]) => {
-      if (entries[0].isIntersecting && !isLoading && loadedCount < MAX_SONGS) {
+      if (entries[0].isIntersecting && !isLoading && loadedCount < maxSongs) {
         loadMoreSongs();
       }
     },
@@ -87,6 +98,22 @@ const MusicLibrary: React.FC = () => {
     setVisibleSongs(sortedSongs.slice(0, BATCH_SIZE));
     setLoadedCount(BATCH_SIZE);
   };
+
+  // Admin actions
+  const handleAddSong = (newSong: SongData) => {
+    setSongList((prevSongs) => [newSong, ...prevSongs]);
+    successNotify("Song added successfully!");
+    setIsAdminModalOpen(false)
+  };
+
+  const handleDeleteSong = (title: string) => {
+    setSongList((prevSongs) => prevSongs.filter((song) => song.title !== title));
+  };
+
+  // update maxLimit
+  useEffect(() => {
+    setMaxSongs(songList.length || MAX_SONGS);
+  }, [songList])
 
   return (
     <div className={styles.container}>
@@ -125,6 +152,14 @@ const MusicLibrary: React.FC = () => {
           Reset
         </button>
       </div>
+
+      {/* Admin Controls */}
+      {
+        role === ADMIN && (
+          <button className={styles.addSongButton} onClick={() => setIsAdminModalOpen(true)}>+ Add Song</button>
+        )
+      }
+      <AddSong isOpen={isAdminModalOpen} onClose={() => setIsAdminModalOpen(false)} onAddSong={handleAddSong} onDeleteSong={handleDeleteSong} songs={songList} />
 
       {/* Songs List (Scrollable) */}
       <div className={styles.songList}>
