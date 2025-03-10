@@ -26,10 +26,10 @@ jobs:
         run: npm install
 
       - name: Build the Nx application
-        run: npx nx build your-app-name --configuration=production
+        run: npx nx build music-library --configuration=production
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/apps/your-app-name
+          folder: music-library/dist
