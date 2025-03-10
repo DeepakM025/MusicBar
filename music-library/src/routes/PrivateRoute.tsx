@@ -4,7 +4,6 @@ import { useAuth } from "../context/AuthContext";
 
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isLoggedIn } = useAuth();
-  debugger
   return isLoggedIn ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
